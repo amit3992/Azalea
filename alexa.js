@@ -33,40 +33,40 @@ const handlers = {
         switch(num) {
             
             case '1':
-                this.emit(':tell', "Do the fucking work. Don't be lazy.");
+                this.emit(':tell', "Do the ducking work. Don't be lazy.");
                 break;
             case '2':
-                this.emit(':tell', "Stop fucking waiting. It's time to start.");
+                this.emit(':tell', "Stop ducking waiting. It's time to start.");
                 break;
             case '3':
                 this.emit(':tell', "Rely on yourself. The universe doesn't give a fuck.");
                 break;
             case '4':
-                this.emit(':tell', "Be fucking practical. Success is not a theory.");
+                this.emit(':tell', "Be ducking practical. Success is not a theory.");
                 break;
             case '5':
                 this.emit(':tell', "Be productive early. Don't fuck around all day.");
                 break;
             case '6':
-                this.emit(':tell', "Don't be a fucking baby. Life's hard. Get on with it.");
+                this.emit(':tell', "Don't be a ducking baby. Life's hard. Get on with it.");
                 break;
             case '7':
                 this.emit(':tell', "Don't hangout with fuckwits.");
                 break;
             case '8':
-                this.emit(':tell', "Don't fucking waste your energy on shit you can't contol.");
+                this.emit(':tell', "Don't ducking waste your energy on shit you can't contol.");
                 break;
             case '9':
-                this.emit(':tell', "Stop bullshitting. It's fucking embarrassing.");
+                this.emit(':tell', "Stop bullshitting. It's ducking embarrassing.");
                 break;
             case '10':
-                this.emit(':tell', "Stop being a fucking people pleaser. It's sad.");
+                this.emit(':tell', "Stop being a ducking people pleaser. It's sad.");
                 break;
             case '11':
                 this.emit(':tell', "Stop putting toxic shit in your body.");
                 break;
             case '12':
-                this.emit(':tell', "Stop doing the same fucking thing and hoping things will change.");
+                this.emit(':tell', "Stop doing the same ducking thing and hoping things will change.");
                 break;
             default:
                 this.emit(':tell', "I've run out of rules. But, you got this! You're doing great!");
