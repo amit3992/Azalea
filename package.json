@@ -1,0 +1,27 @@
+{
+  "name": "azalea",
+  "version": "1.0.0",
+  "description": "Night King Alexa app",
+  "main": "alexa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amit3992/Azalea.git"
+  },
+  "keywords": [
+    "Alexa",
+    "GoT"
+  ],
+  "author": "Amit Kulkarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amit3992/Azalea/issues"
+  },
+  "homepage": "https://github.com/amit3992/Azalea#readme",
+  "dependencies": {
+    "node-fetch": "^2.0.0",
+    "yargs": "^11.0.0"
+  }
+}

@@ -1,9 +1,0 @@
-arn:aws:lambda:us-east-1:922252096823:function:greeter
-
-AWS - N.Virgina
-
-
-unction () {
-        let name = this.event.request.intent.slots.name.value;
-        this.emit(':tell', 'Hello, ' + name + '!');
-    }

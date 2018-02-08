@@ -1,12 +1,10 @@
-/* eslint-disable  func-names */
-/* eslint quote-props: ["error", "consistent"]*/
 'use strict';
 const Alexa = require('alexa-sdk');
-const APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+const APP_ID = "amzn1.ask.skill.72cf969f-3580-49cb-be71-2c465c7599a3";  // TODO replace with your app ID (OPTIONAL).
 const languageStrings = {
     'en': {
         translation: {
-            SKILL_NAME: 'Greeter',
+            SKILL_NAME: 'Night King',
             HELP_MESSAGE: 'You can say exit to quit skill',
             HELP_REPROMPT: 'What can I help you with?',
             STOP_MESSAGE: 'Goodbye!',
@@ -23,56 +21,26 @@ const handlers = {
     },
     'SayHello': function () {
         let name = this.event.request.intent.slots.name.value;
-        this.emit(':tell', 'Hello, ' + name + '!');
-    }, 
+        if(name) {
+          this.emit(':tell', 'Hello, ' + name + '!');
+        } else {
+          this.emit('Hello');
+        }
+
+    },
     'whoIsThere': function() {
         this.emit(':tell', 'Your mom.');
     },
     'ruleBot': function() {
         let num = this.event.request.intent.slots.number.value;
-        switch(num) {
-            
-            case '1':
-                this.emit(':tell', "Do the ducking work. Don't be lazy.");
-                break;
-            case '2':
-                this.emit(':tell', "Stop ducking waiting. It's time to start.");
-                break;
-            case '3':
-                this.emit(':tell', "Rely on yourself. The universe doesn't give a fuck.");
-                break;
-            case '4':
-                this.emit(':tell', "Be ducking practical. Success is not a theory.");
-                break;
-            case '5':
-                this.emit(':tell', "Be productive early. Don't fuck around all day.");
-                break;
-            case '6':
-                this.emit(':tell', "Don't be a ducking baby. Life's hard. Get on with it.");
-                break;
-            case '7':
-                this.emit(':tell', "Don't hangout with fuckwits.");
-                break;
-            case '8':
-                this.emit(':tell', "Don't ducking waste your energy on shit you can't contol.");
-                break;
-            case '9':
-                this.emit(':tell', "Stop bullshitting. It's ducking embarrassing.");
-                break;
-            case '10':
-                this.emit(':tell', "Stop being a ducking people pleaser. It's sad.");
-                break;
-            case '11':
-                this.emit(':tell', "Stop putting toxic shit in your body.");
-                break;
-            case '12':
-                this.emit(':tell', "Stop doing the same ducking thing and hoping things will change.");
-                break;
-            default:
-                this.emit(':tell', "I've run out of rules. But, you got this! You're doing great!");
-                break;
-        }
-        
+        var speechData = ruleFuncton(num);
+        this.emit(':tell', speechData);
+    },
+    'whoIs': function() {
+        let fName = this.event.request.intent.slots.fName.value;
+        let lName = this.event.request.intent.slots.lName.value;
+
+        this.emit(':tell', "Getting information for " + fName + " " + lName + ". She is from House Stark.");
     },
     'AMAZON.HelpIntent': function () {
         const speechOutput = this.t('HELP_MESSAGE');
@@ -86,6 +54,42 @@ const handlers = {
         this.emit(':tell', this.t('STOP_MESSAGE'));
     },
 };
+
+
+var ruleFuncton = (num) => {
+
+    switch(num) {
+
+            case '1':
+                return "Do the fucking work. Don't be lazy.";
+            case '2':
+                return "Stop fucking waiting. It's time to start.";
+            case '3':
+                return "Rely on yourself. The universe doesn't give a fuck.";
+            case '4':
+                return "Be fucking practical. Success is not a theory.";
+            case '5':
+                return "Be productive early. Don't fuck around all day.";
+            case '6':
+                return "Don't be a fucking baby. Life's hard. Get on with it.";
+            case '7':
+                return "Don't hangout with fuckwits.";
+            case '8':
+                return "Don't fucking waste your energy on shit you can't control.";
+            case '9':
+                return "Stop bullshitting. It's fucking embarrassing.";
+            case '10':
+                return "Stop being a fucking people pleaser. It's sad.";
+            case '11':
+                return "Stop putting toxic shit in your body.";
+            case '12':
+                return "Stop doing the same fucking thing and hoping things will change.";
+            default:
+                return "I've run out of rules. But, you got this! You're doing great!";
+
+        }
+
+}
 
 exports.handler = function (event, context) {
     const alexa = Alexa.handler(event, context);
